@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_game"
+    tools:context="com.heyl.magicwater.GameActivity">
+
+    <ImageView
+        android:id="@+id/img_animate"
+        android:layout_width="40dp"
+        android:layout_height="305dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="140dp"
+        android:scaleType="fitXY"
+        />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="16dp"
+        android:text="23"
+        android:textColor="#F6F21E"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_step"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="175dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="4"
+        android:textColor="#F6F21E"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_step"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="向7L的瓶装入6L的水"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"/>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.heyl.magicwater.view.CustomSurfaceView
+            android:id="@+id/cv_bottle_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_bottle_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp"
+        android:gravity="center"
+        android:text="0/2"
+        android:textColor="@android:color/white"
+        android:textSize="16dp"/>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.heyl.magicwater.view.CustomSurfaceView
+            android:id="@+id/cv_bottle_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/tv_bottle_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_bottle_one"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="170dp"
+        android:layout_toRightOf="@id/img_animate"
+        android:gravity="center"
+        android:text="0/3"
+        android:textColor="@android:color/white"
+        android:textSize="16dp"/>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.heyl.magicwater.view.CustomSurfaceView
+            android:id="@+id/cv_bottle_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/tv_bottle_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_bottle_one"
+        android:layout_marginTop="170dp"
+        android:layout_toRightOf="@id/tv_bottle_two"
+        android:gravity="center"
+        android:text="0/8"
+        android:textColor="@android:color/white"
+        android:textSize="16dp"/>
+
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="21dp"
+        android:background="@android:color/transparent"/>
+
+
+</RelativeLayout>
