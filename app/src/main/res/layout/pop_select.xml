@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingRight="20dp"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:id="@+id/ll_popup_contianer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/img_menu"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:src="@drawable/meun"/>
+    <ImageView
+        android:id="@+id/img_restart"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/restart"/>
+    <ImageView
+        android:id="@+id/img_regulation"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/regulation"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

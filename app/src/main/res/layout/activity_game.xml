@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rl_parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_game"
-    tools:context="com.heyl.magicwater.GameActivity">
+    >
 
     <ImageView
         android:id="@+id/img_animate"
@@ -53,11 +52,6 @@
         android:textColor="@android:color/white"
         android:textSize="20dp"/>
 
-    <com.heyl.magicwater.view.CustomView
-        android:id="@+id/cv_bottle_one"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
 
     <TextView
         android:id="@+id/tv_bottle_one"
@@ -65,17 +59,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_title"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="170dp"
         android:gravity="center"
         android:text="0/2"
         android:textColor="@android:color/white"
         android:textSize="16dp"/>
-
-    <com.heyl.magicwater.view.CustomView
-        android:id="@+id/cv_bottle_two"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
 
 
     <TextView
@@ -91,20 +79,14 @@
         android:textColor="@android:color/white"
         android:textSize="16dp"/>
 
-    <com.heyl.magicwater.view.CustomView
-        android:id="@+id/cv_bottle_three"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
-
 
     <TextView
         android:id="@+id/tv_bottle_three"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_bottle_one"
-        android:layout_toRightOf="@id/tv_bottle_two"
         android:layout_marginTop="170dp"
+        android:layout_toRightOf="@id/tv_bottle_two"
         android:gravity="center"
         android:text="0/8"
         android:textColor="@android:color/white"
@@ -119,6 +101,84 @@
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="21dp"
         android:background="@android:color/transparent"/>
+
+
+    <Button
+        android:id="@+id/btn_select"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/arrow_top"/>
+
+
+    <FrameLayout
+        android:id="@+id/fl_bottle_one"
+        android:layout_width="108dp"
+        android:layout_height="198dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="110dp"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/cv_bottle_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bottle_0"
+            />
+
+        <ImageView
+            android:id="@+id/img_bottle_one_side"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_bottle_two"
+        android:layout_width="108dp"
+        android:layout_height="198dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="300dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/cv_bottle_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bottle_0"
+            />
+
+        <ImageView
+            android:id="@+id/img_bottle_two_side"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/fl_bottle_three"
+        android:layout_width="108dp"
+        android:layout_height="198dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="300dp">
+
+        <ImageView
+            android:id="@+id/cv_bottle_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bottle_0"
+            android:visibility="visible"
+            />
+
+        <ImageView
+            android:id="@+id/img_bottle_three_side"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </FrameLayout>
 
 
 </RelativeLayout>

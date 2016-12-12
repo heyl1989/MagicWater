@@ -33,6 +33,18 @@ public class AnimateUtil {
         rotateAnimator.start();
     }
 
+    /**
+     * 以view的中心为旋转点
+     * @param obj
+     * @param startDegree
+     * @param endDegree
+     */
+    public static void rotate(Object obj, float startDegree, float endDegree){
+        ObjectAnimator rotateAnimator = ObjectAnimator.ofFloat(obj, "rotation", startDegree, endDegree);
+        rotateAnimator.setDuration(350);
+        rotateAnimator.start();
+    }
+
     public static void rotate(Object obj, int x, int y , float startDegree, float endDegree, final AnimationEndListener animationEndListener){
         Log.e("回转坐标",x+"/"+y);
         ObjectAnimator rotateAnimator = ObjectAnimator.ofFloat(obj, "rotation", startDegree, endDegree);

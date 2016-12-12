@@ -11,7 +11,7 @@ import com.heyl.magicwater.App.MyApplication;
 public class SPCash {
 
     private static SharedPreferences sp = MyApplication.getInstance()
-            .getSharedPreferences("userinfo",Context.MODE_PRIVATE);
+            .getSharedPreferences("userinfo", Context.MODE_PRIVATE);
 
     /**
      * 存入数据
@@ -21,10 +21,25 @@ public class SPCash {
     }
 
     /**
+     * 存入boolean数据
+     */
+    public static void saveData(String key, boolean value) {
+        sp.edit().putBoolean(key, value).commit();
+    }
+
+
+    /**
      * 取出数据
      */
     public static int getData(String key, int value) {
         return sp.getInt(key, value);
+    }
+
+    /**
+     * 取出数据
+     */
+    public static boolean getData(String key, boolean value) {
+        return sp.getBoolean(key, value);
     }
 
     /**
@@ -33,12 +48,14 @@ public class SPCash {
     public static boolean isContainKey(String key) {
         return sp.contains(key);
     }
+
     /**
-     *删除key
+     * 删除key
      */
     public static void clearKey(String key) {
         sp.edit().remove(key).commit();
     }
+
     /**
      * 删除所有
      */

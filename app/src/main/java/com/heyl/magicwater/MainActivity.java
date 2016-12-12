@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.support.v4.content.LocalBroadcastManager;
+import android.view.SoundEffectConstants;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -13,18 +14,28 @@ import android.widget.ImageView;
 import com.heyl.magicwater.base.BaseActivity;
 import com.heyl.magicwater.comman.Content;
 
+import cn.bmob.v3.update.BmobUpdateAgent;
+
 public class MainActivity extends BaseActivity implements OnClickListener{
 
     private ImageView imgVol;
     private boolean isMusicPlay = false;
 
+
     @Override
     protected void initView() {
         initService();
         setContentView(R.layout.activity_main);
+        //调试建<(￣3￣)> 表!
+        //BmobUpdateAgent.initAppVersion();
+        //自动更新
+        BmobUpdateAgent.update(this);
 
         Button start = (Button)findViewById(R.id.start);
         start.setOnClickListener(this);
+        start.setSoundEffectsEnabled(true);
+        start.playSoundEffect(SoundEffectConstants.CLICK);
+
         imgVol = (ImageView)findViewById(R.id.img_vol);
         imgVol.setOnClickListener(this);
         ImageView imgSetting = (ImageView)findViewById(R.id.img_setting);
@@ -55,8 +66,10 @@ public class MainActivity extends BaseActivity implements OnClickListener{
         switch (v.getId()){
             case R.id.start:
                 goOther(SelectGradeActivity.class);
+                clickMusic();
             break;
             case R.id.img_vol:
+                clickMusic();
                 if(isMusicPlay){
                     LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(Content.STOP_VOL));
                     imgVol.setImageResource(R.drawable.close_vol);
@@ -68,7 +81,8 @@ public class MainActivity extends BaseActivity implements OnClickListener{
                 }
                 break;
             case R.id.img_setting:
-                showTost("设置");
+                clickMusic();
+                goOther(SettingActivity.class);
                 break;
         }
 

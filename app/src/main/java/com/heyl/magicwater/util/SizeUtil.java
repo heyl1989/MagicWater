@@ -31,6 +31,25 @@ public class SizeUtil {
     }
 
     /**
+     * 获取View的宽高
+     */
+    private static int[] hOrW = new int[4];
+    public static void getHorW(final View v ,final SizeInterface sizeInterface ){
+        ViewTreeObserver vto = v.getViewTreeObserver();
+        vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                v.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                hOrW[0] = v.getLeft();
+                hOrW[1] = v.getTop();
+                hOrW[2] = v.getRight();
+                hOrW[3] = v.getBottom();
+                sizeInterface.getViewWH(hOrW);
+            }
+        });
+    }
+
+    /**
      * 获取屏幕宽
      * @param context
      * @return
